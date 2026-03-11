@@ -4,6 +4,22 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>MatFileIO</Title>
+    <Authors>randolf</Authors>
+    <Description>Zero Heap Memory Allocation .mat file IO library for C#</Description>
+    <PackageProjectUrl>https://github.com/randolfly/MatFileIO</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/randolfly/MatFileIO</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>matlab; IO;</PackageTags>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
