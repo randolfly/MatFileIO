@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="MatFileIO.Test/MatFileIO.Test.csproj" />
+  <Project Path="MatFileIO/MatFileIO.csproj" />
+</Solution>
