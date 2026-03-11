@@ -1,4 +1,6 @@
-﻿using System.Buffers.Binary;
+﻿using MatFileIO.Ext;
+
+using System.Buffers.Binary;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -14,8 +16,6 @@ namespace MatFileIO;
 /// <param name="fileName">written mat file name, should end with .mat</param> 
 public class MatWriter : IDisposable, IAsyncDisposable {
   private readonly FileStream fileStream;
-  private readonly SemaphoreSlim semaphoreSlim = new(1, 1);
-
   public MatWriter(string fileName) {
     fileStream = new(fileName, FileMode.Create, FileAccess.Write);
     WriteHeader();
@@ -52,13 +52,9 @@ public class MatWriter : IDisposable, IAsyncDisposable {
   }
 
 
-  public async Task WriteArrayAsync<T>(string varName, ReadOnlyMemory<T> data) where T : unmanaged {
-    await semaphoreSlim.WaitAsync();
-    try {
-      await Task.Run(() => WriteArray(varName, data.Span));
-    } finally {
-      semaphoreSlim.Release();
-    }
+  public async Task WriteArrayAsync<T>(string varName, Memory<T> data) where T : unmanaged {
+    WriteArrayMetaInfo<T>(varName, data.Length);
+    await fileStream.WriteAsync(data.AsBytes());
   }
 
   private void WriteArrayMetaInfo<T>(string varName, int length) where T : unmanaged {
