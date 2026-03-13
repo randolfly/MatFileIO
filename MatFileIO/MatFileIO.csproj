@@ -7,8 +7,8 @@
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>MatFileIO</Title>
 		<Authors>randolf</Authors>
-		<VersionPrefix>1.0.1</VersionPrefix>
-		<Description>Zero Heap Memory Allocation .mat file IO library for C#</Description>
+		<VersionPrefix>1.0.2</VersionPrefix>
+		<Description>Zero Heap Memory Allocation .mat v5.0 file IO library for C#</Description>
 		<PackageProjectUrl>https://github.com/randolfly/MatFileIO</PackageProjectUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/randolfly/MatFileIO</RepositoryUrl>
