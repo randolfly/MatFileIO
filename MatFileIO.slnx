@@ -1,4 +1,10 @@
 <Solution>
-  <Project Path="MatFileIO.Test/MatFileIO.Test.csproj" />
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="MatFileIO.Test/MatFileIO.Test.csproj">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
   <Project Path="MatFileIO/MatFileIO.csproj" />
 </Solution>
